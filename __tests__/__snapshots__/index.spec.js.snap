@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`containers tip.md 1`] = `
+<div class="tip custom-block">
+  <p class="custom-block-title">TIP</p>
+  <p>I am a tip</p>
+</div>
+`;
+
+exports[`containers tip-override.md 1`] = `
+<div class="tip custom-block">
+  <p class="custom-block-title">提示</p>
+  <p>I am a tip</p>
+</div>
+`;
