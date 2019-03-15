@@ -1,4 +1,5 @@
 const name = 'vuepress-plugin-container'
+const ContainerPlugin = require('../..')
 
 module.exports = ({ isProd }) => ({
   base: `/${name}/`,
@@ -6,11 +7,11 @@ module.exports = ({ isProd }) => ({
   theme: 'contrib',
 
   plugins: [
-    ['container', {
+    [ContainerPlugin, {
       type: 'right',
       defaultTitle: '',
     }],
-    ['container', {
+    [ContainerPlugin, {
       type: 'theorem',
       before: info => `<div class="theorem"><p class="title">${info}</p>`,
       after: '</div>',
