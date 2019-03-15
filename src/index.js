@@ -10,7 +10,7 @@ function call (target, ...args) {
 
 module.exports = (options, context) => ({
   name: 'vuepress-plugin-container',
-  
+
   multiple: true,
 
   extendMarkdown (md) {
@@ -20,7 +20,7 @@ module.exports = (options, context) => ({
       before,
       after,
       type = '',
-      defaultTitle = type.toUpperCase()
+      defaultTitle = type.toUpperCase(),
     } = options
     if (!type) return
 
@@ -46,5 +46,5 @@ module.exports = (options, context) => ({
     }
 
     md.use(container, type, { render, validate, marker })
-  }
+  },
 })

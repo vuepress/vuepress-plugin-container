@@ -17,7 +17,7 @@ module.exports = ({ isProd }) => ({
       after: '</div>',
     }],
   ],
-  
+
   locales: {
     '/en/': {
       lang: 'en-US',
@@ -30,7 +30,7 @@ module.exports = ({ isProd }) => ({
       description: '一个用于注册 markdown 容器的 VuePress 插件',
     },
   },
-  
+
   themeConfig: {
     sidebar: [
       '',

@@ -1,9 +1,14 @@
+root: true
+
 extends:
   - plugin:jest/recommended
   - plugin:vue/essential
-  - eslint:recommended
+  - standard
 
 rules:
+  comma-dangle: 
+    - error
+    - always-multiline
   indent:
     - error
     - 2
