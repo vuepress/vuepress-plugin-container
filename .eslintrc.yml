@@ -1,5 +1,6 @@
 extends:
   - plugin:jest/recommended
+  - plugin:vue/essential
   - eslint:recommended
 
 rules:
