@@ -63,7 +63,7 @@ module.exports = {
 
 See detailed configurations [here](./config.md).
 
-## Demostration
+## Demonstration
 
 **Input**
 

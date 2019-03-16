@@ -8,7 +8,18 @@ describe('containers', () => {
   beforeAll(async () => {
     app = createApp({
       plugins: [
-        [ContainerPlugin, { type: 'tip' }],
+        [ContainerPlugin, {
+          type: 'hint',
+          defaultTitle: '💡 HINT',
+          localeTitle: {
+            jp: 'ヒント',
+          },
+        }],
+        [ContainerPlugin, {
+          type: 'theorem',
+          before: info => `<div class="theorem"><p class="title">${info}</p>`,
+          after: '</div>',
+        }],
       ],
     })
     return app.process()
@@ -19,7 +30,8 @@ describe('containers', () => {
     const filepath = path.join(fragmentDir, name)
     const content = fs.readFileSync(filepath, 'utf8')
     test(name, () => {
-      const { html } = app.markdown.render(content)
+      const relPath = filepath.includes('locale-jp') ? 'jp/readme.md' : 'readme.md'
+      const { html } = app.markdown.render(content, { relPath })
       expect(html).toMatchSnapshot()
     })
   })
