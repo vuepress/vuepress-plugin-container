@@ -1,6 +1,5 @@
-# [vuepress-plugin-container](https://vuepress-contrib.github.io/vuepress-plugin-container/)
+# [vuepress-plugin-container](https://vuepress.github.io/plugins/container.html)
 
-[![Build Status](https://travis-ci.org/vuepress-contrib/vuepress-plugin-container.svg?branch=master)](https://travis-ci.org/vuepress-contrib/vuepress-plugin-container)
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-container.svg)](https://www.npmjs.com/package/vuepress-plugin-container)
 
 A [VuePress](https://vuepress.vuejs.org/) plugin that registers markdown containers.
