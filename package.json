@@ -1,16 +1,16 @@
 {
   "name": "vuepress-plugin-container",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "main": "src/index.js",
   "description": "A VuePress plugin that that registers markdown containers.",
   "author": "Shigma <1700011071@pku.edu.cn>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vuepress-contrib/vuepress-plugin-container.git"
+    "url": "https://github.com/vuepress/vuepress-plugin-container.git"
   },
   "bugs": {
-    "url": "https://github.com/vuepress-contrib/vuepress-plugin-container/issues"
+    "url": "https://github.com/vuepress/vuepress-plugin-container/issues"
   },
   "homepage": "https://vuepress.github.io/plugins/container.html",
   "scripts": {

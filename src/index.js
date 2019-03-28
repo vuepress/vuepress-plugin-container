@@ -35,10 +35,10 @@ module.exports = (options, context) => ({
       } else {
         render = (tokens, index, _, env) => {
           const token = tokens[index]
-          const relPath = env.relPath
+          const { relativePath = '' } = env
           let fallbackTitle = defaultTitle
           for (const path in localeTitle) {
-            if (relPath.startsWith(path.replace(/^\//, ''))) {
+            if (relativePath.startsWith(path.replace(/^\//, ''))) {
               fallbackTitle = localeTitle[path]
               if (path !== '/') break
             }
