@@ -69,14 +69,14 @@ write something here ~
 - **type:** `string | Record<string, string>`
 - **default:** the upper case of `type`
 
-The default title for the container. If no title is provided, `defaultTitle` will be shown as the title of the container. If an object was specified, the default title will be `defaultTitle` when using the corresponding language.
+The default title for the container. If no title is provided, `defaultTitle` will be shown as the title of the container. If an object was specified, the default title will depend on current locale.
 
 ### before
 
 - **type:** `string | Function`
 - **default:** `undefined`
 
-String to be placed before the block. If specified as a function, an argument `info` will be passed to it. (In the example above, `info` will be `bar`.) If specified, the default title will depend on current locale.
+String to be placed before the block. If specified as a function, an argument `info` will be passed to it. (In the example above, `info` will be `bar`.) If specified, it will override `defaultTitle`.
 
 ### after
 
