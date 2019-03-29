@@ -1,6 +1,7 @@
 # [vuepress-plugin-container](https://vuepress.github.io/plugins/container/)
 
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-container.svg)](https://www.npmjs.com/package/vuepress-plugin-container)
+[![CircleCI](https://img.shields.io/circleci/project/github/vuepress/vuepress-plugin-container/master.svg)](https://circleci.com/gh/vuepress/vuepress-plugin-container)
 
 A [VuePress](https://vuepress.vuejs.org/) plugin that registers markdown containers.
 
