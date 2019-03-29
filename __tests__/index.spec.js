@@ -1,6 +1,9 @@
-const { fs, path } = require('@vuepress/shared-utils')
+/**
+ * @jest-environment node
+ */
+
+const { fs, path, parseFrontmatter } = require('@vuepress/shared-utils')
 const { createApp } = require('@vuepress/core')
-const ContainerPlugin = require('..')
 
 describe('containers', () => {
   let app
@@ -8,14 +11,14 @@ describe('containers', () => {
   beforeAll(async () => {
     app = createApp({
       plugins: [
-        [ContainerPlugin, {
+        [require('..'), {
           type: 'hint',
-          defaultTitle: '💡 HINT',
-          localeTitle: {
-            jp: 'ヒント',
+          defaultTitle: {
+            '/': '💡 HINT',
+            '/jp/': 'ヒント',
           },
         }],
-        [ContainerPlugin, {
+        [require('..'), {
           type: 'theorem',
           before: info => `<div class="theorem"><p class="title">${info}</p>`,
           after: '</div>',
@@ -28,10 +31,13 @@ describe('containers', () => {
   const fragmentDir = path.join(__dirname, 'fragments')
   fs.readdirSync(fragmentDir).forEach((name) => {
     const filepath = path.join(fragmentDir, name)
-    const content = fs.readFileSync(filepath, 'utf8')
+    const rawFile = fs.readFileSync(filepath, 'utf8')
+    const { data, content } = parseFrontmatter(rawFile)
     test(name, () => {
-      const relPath = filepath.includes('locale-jp') ? 'jp/readme.md' : 'readme.md'
-      const { html } = app.markdown.render(content, { relPath })
+      const { html } = app.markdown.render(content, {
+        ...(data.ENV || {}),
+        frontmatter: data,
+      })
       expect(html).toMatchSnapshot()
     })
   })

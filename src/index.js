@@ -20,7 +20,6 @@ module.exports = (options, context) => ({
       before,
       after,
       type = '',
-      localeTitle = {},
       defaultTitle = type.toUpperCase(),
     } = options
     if (!type) return
@@ -36,14 +35,19 @@ module.exports = (options, context) => ({
         render = (tokens, index, _, env) => {
           const token = tokens[index]
           const { relativePath = '' } = env
-          let fallbackTitle = defaultTitle
-          for (const path in localeTitle) {
-            if (relativePath.startsWith(path.replace(/^\//, ''))) {
-              fallbackTitle = localeTitle[path]
-              if (path !== '/') break
+          let title = token.info.trim().slice(type.length).trim()
+          if (!title && defaultTitle) {
+            if (typeof defaultTitle === 'string') {
+              title = defaultTitle
+            } else if (typeof defaultTitle === 'object') {
+              for (const path in defaultTitle) {
+                if (relativePath.startsWith(path.replace(/^\//, ''))) {
+                  title = defaultTitle[path]
+                  if (path !== '/') break
+                }
+              }
             }
           }
-          let title = token.info.trim().slice(type.length).trim() || fallbackTitle
           if (title) title = `<p class="custom-block-title">${title}</p>`
           if (token.nesting === 1) {
             return `<div class="${type} custom-block">${title}\n`
