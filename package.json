@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-container",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "src/index.js",
   "description": "A VuePress plugin that that registers markdown containers.",
   "author": "Shigma <1700011071@pku.edu.cn>",
@@ -19,8 +19,8 @@
     "test": "npm run lint & npm run jest"
   },
   "devDependencies": {
-    "@vuepress/core": "^1.0.0-alpha.44",
-    "@vuepress/shared-utils": "^1.0.0-alpha.44",
+    "@vuepress/core": "^1.0.2",
+    "@vuepress/shared-utils": "^1.0.2",
     "eslint": "^5.15.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
