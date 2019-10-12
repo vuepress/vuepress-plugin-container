@@ -1,5 +1,7 @@
 # [vuepress-plugin-container](https://vuepress.github.io/plugins/container/)
 
+> Migrated to [vuepress-community](https://github.com/vuepress/vuepress-community)
+
 [![npm](https://img.shields.io/npm/v/vuepress-plugin-container.svg)](https://www.npmjs.com/package/vuepress-plugin-container)
 [![CircleCI](https://img.shields.io/circleci/project/github/vuepress/vuepress-plugin-container/master.svg)](https://circleci.com/gh/vuepress/vuepress-plugin-container)
 
